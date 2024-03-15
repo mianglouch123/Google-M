@@ -74,7 +74,7 @@ interface ResultProps {
                 
 
                 <div className='flex gap-4'>
-                {info.info.map((title) => (
+                {info?.info?.map((title) => (
                     <div key={uuidv4()}  className='flex border rounded-[25px]  outline-none p-2 bg-white text-semibold items-center justify-center'>
                         <p className='cursor-pointer font-semibold opacity-80'>{title.title}</p>
                     </div>
@@ -100,7 +100,7 @@ interface ResultProps {
             {
             kewords?.map((content) => (
                 <div key={uuidv4()} className='grid grid-cols-3 pt-3 justify-center items-start flex-col gap-2'>
-                    {content.keywords.map((key) => (
+                    {content?.keywords?.map((key) => (
                         <div  key={uuidv4()}>
                         <p className='bg-white cursor-pointer border boder-[#5f6368] p-2 text-normal text-[#5f6369]'>{key.keyword}</p>
 
