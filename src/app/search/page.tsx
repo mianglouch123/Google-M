@@ -6,7 +6,7 @@ import {  useSearchParams } from "next/navigation";
 import Results from "../../Components/Results";
 import { Suspense } from "react";
 
-function Search() {
+function Page() {
 
 const params = useSearchParams()
 const query = params.get('q') as string
@@ -26,4 +26,4 @@ return (
 )
 }
 
-export default Search
+export default Page
