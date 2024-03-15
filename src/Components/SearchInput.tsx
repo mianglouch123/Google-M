@@ -11,20 +11,25 @@ function SearchInput() {
   const [search , setSearch] = useState<string>('');
   const router = useRouter()
   const path = usePathname();
-  const params = new URL(window.location.href)
-  const ROUTES : string [] = ['/search' , '/images']
-  const query = params.searchParams.get('q') as string
+  let query
 
   useEffect(() => {
-   
-    
-    if(ROUTES.includes(path)){
-      
-    setSearch(query)
-    console.log('linea 37 componente search input ' + path)
 
-    
+
+    if(typeof window !== 'undefined') {
+      const params = new URL(window.location.href)
+      const ROUTES : string [] = ['/search' , '/images']
+       query = params.searchParams.get('q') as string
+      if(ROUTES.includes(path)){
+        
+      setSearch(query)
+      console.log('linea 37 componente search input ' + path)
+  
+      
+      }
+
     }
+    
  
   } , [query])
 

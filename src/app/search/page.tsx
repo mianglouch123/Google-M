@@ -7,10 +7,18 @@ import { Suspense } from "react";
 
 
 function PageSearch() {
+let query
 
-const url = new URL(window.location.href)
-const query = url.searchParams.get('q') as string
-console.log(query)
+
+
+if(typeof window !== undefined) {
+       const url = new URL(window.location.href)
+       query = url.searchParams.get('q') as string
+       console.log(query)
+}else {
+       return 
+}
+
 return (
          
        

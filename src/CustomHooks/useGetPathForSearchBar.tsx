@@ -5,23 +5,35 @@ import { usePathname} from 'next/navigation'
 
 function useGetPathForSearchBar() {
 
-
-    const currentPath = usePathname()
-    const params = new URL(window.location.href)
-    const queryParams = params.searchParams.get('q') as string
+  
     const [isIndexPath , setIsIndexPath] = useState<boolean>(false);
+    const currentPath = usePathname()
+    let queryParams
+    
     
     useEffect(() => {
-        if(currentPath === '/' && !queryParams) {
-            setIsIndexPath(true)
-          }
-          else if(['/search' , '/images '].includes(currentPath)) {
-            setIsIndexPath(false)
-          }
-          else {
-            setIsIndexPath(false)
-          }
 
+
+      if(typeof window !== 'undefined') {
+        const params = new URL(window.location.href)
+       queryParams = params.searchParams.get('q') as string
+      
+       if(currentPath === '/' && !queryParams) {
+        setIsIndexPath(true)
+      }
+      else if(['/search' , '/images '].includes(currentPath)) {
+        setIsIndexPath(false)
+      }
+      else {
+        setIsIndexPath(false)
+      }
+
+      
+      
+      } else {
+        return
+      }
+        
 
 
 

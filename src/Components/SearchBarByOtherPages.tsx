@@ -1,19 +1,23 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import SearchInput from './SearchInput';
 
 function SearchBarByOtherPages() {
 
   const router = useRouter();
-  const path = usePathname();
-  const params = new URL(window.location.href)
 
 function handleRouteToImagePage() {
-  const searchQuery = params.searchParams.get('q') as string;
+
+  if(typeof window !== undefined) {
+    const params = new URL(window.location.href)
+    const searchQuery = params.searchParams.get('q') as string;
+    router.replace('/images?q=' + searchQuery )
+
+  } else {
+    return
+  }
   
-  router.replace('/images?q=' + searchQuery )
 
   
 

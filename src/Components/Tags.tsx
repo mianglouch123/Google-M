@@ -4,23 +4,33 @@ import Link from "next/link"
 
 
 export default function Tags() {
- 
-
-    const params = new URL(window.location.href);
-    const query  = params.searchParams.get("q") as string
+    
+    let query : string
 
      interface TagObject {
         tag : string ,
         path : string
      }
 
-   const tags : Array<TagObject> = [
-    {
-        tag : 'Todo',
-        path : '/search'
+     const tags : Array<TagObject> = [
+        {
+            tag : 'Todo',
+            path : '/search'
+        
+        } 
+       ]
+
+
+    if(typeof window !== 'undefined') {
+         const params = new URL(window.location.href);
+         query  = params.searchParams.get("q") as string
     
-    } 
-   ]
+     
+    }else {
+        return
+    }
+
+ 
 
 
 
