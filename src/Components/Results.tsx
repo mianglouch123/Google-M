@@ -65,7 +65,10 @@ interface ResultProps {
  
  return (
 
-    <>
+  <div className="h-100vh w-100vw flex justify-center items-center flex-col p-4 pl-[15px]">
+    
+
+    
 
    <div className="flex items-center justify-center pt-[15px]">
          {panel?.map((info) => (
@@ -132,7 +135,7 @@ interface ResultProps {
     ))}
    </div>
     
-    </>
+    </div>
 
 
 )
