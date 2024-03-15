@@ -1,8 +1,9 @@
 "use client"
 
 
-import Results from "../Components/Results";
+
 import {  useSearchParams } from "next/navigation";
+import Results from "../../Components/Results";
 import { Suspense } from "react";
 
 function Search() {

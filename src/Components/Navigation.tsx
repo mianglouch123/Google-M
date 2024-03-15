@@ -1,8 +1,10 @@
 "use client"
 
-import getPathForSearchBar from "../CustomHooks/useGetPathForSearchBar"
+import getPathForSearchBar from "../app/CustomHooks/useGetPathForSearchBar"
 import SearchBarIndex from "./SearchBar"
 import SearchBarByOtherPages from "./SearchBarByOtherPages"
+
+
 function Navigation() {
 
 const {isIndexPath} = getPathForSearchBar() 

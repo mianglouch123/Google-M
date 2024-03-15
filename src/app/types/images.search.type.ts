@@ -1,7 +1,7 @@
 type status  = "pending" | "failed" | "success"
 
 
-export interface ItemsReponseSearchImage {
+ interface ItemsReponseSearchImage {
         title : string,
         thumbnailImageUrl : string,
         originalImageUrl : string ,

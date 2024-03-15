@@ -1,6 +1,6 @@
 "use client"
 
-import { ApiResponse } from '../types/results.type'
+import { ApiResponse } from '../app/types/results.type'
 import {useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
@@ -38,11 +38,10 @@ interface ResultProps {
          const response =  await fetch(BASE_URL , options)
          const data =  await response.json() as ApiResponse
 
-         console.log(data)
 
          setResults(data.results)
 
-         if( (!Array.isArray(data.knowledge_panel) ) && ( !Array.isArray(data.related_keywords.keywords) ) 
+         if( (!Array.isArray(data?.knowledge_panel) ) && ( !Array.isArray(data?.related_keywords?.keywords) ) 
          
          || 
 

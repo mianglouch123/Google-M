@@ -4,7 +4,7 @@ import Image from 'next/image'
 import SearchInput from './SearchInput'
 
 
-const SearchBarIndex = () => {
+function SearchBarIndex() {
   return (
    
     <>
