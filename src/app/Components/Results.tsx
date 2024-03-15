@@ -1,10 +1,9 @@
 "use client"
-import Tags from './Tags';
+
 import { ApiResponse } from '../types/results.type'
 import {useEffect, useState} from 'react'
-import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
-import { type } from 'os';
+import Link from 'next/link';
 
 
 
@@ -76,7 +75,7 @@ interface ResultProps {
 
                 <div className='flex gap-4'>
                 {info.info.map((title) => (
-                    <div className='flex border rounded-[25px]  outline-none p-2 bg-white text-semibold items-center justify-center' key={uuidv4()}>
+                    <div key={uuidv4()}  className='flex border rounded-[25px]  outline-none p-2 bg-white text-semibold items-center justify-center'>
                         <p className='cursor-pointer font-semibold opacity-80'>{title.title}</p>
                     </div>
                 ) )}
@@ -100,10 +99,10 @@ interface ResultProps {
            </div>
             {
             kewords?.map((content) => (
-                <div className='grid grid-cols-3 pt-3 justify-center items-start flex-col gap-2' key={uuidv4()}>
+                <div key={uuidv4()} className='grid grid-cols-3 pt-3 justify-center items-start flex-col gap-2'>
                     {content.keywords.map((key) => (
-                        <div>
-                        <p  className='bg-white cursor-pointer border boder-[#5f6368] p-2 text-normal text-[#5f6369]' key={uuidv4()}>{key.keyword}</p>
+                        <div  key={uuidv4()}>
+                        <p className='bg-white cursor-pointer border boder-[#5f6368] p-2 text-normal text-[#5f6369]'>{key.keyword}</p>
 
                         </div>
                     ))}
@@ -124,10 +123,6 @@ interface ResultProps {
 
     {results?.map((content) => (
         <div key={uuidv4()} className='flex items-start justify-center flex-col mt-[25px]'>
-
-
-
-         
        
           <Link href={content.url} className='text-[#3842b3] cursor-pointer text-[15px]'>{content.url}</Link>
           <p className='font-normal text-[#5f6368]'>{content.title}</p>
