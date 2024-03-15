@@ -2,16 +2,15 @@
 
 
 
-import {  useSearchParams } from "next/navigation";
 import Results from "../../Components/Results";
 import { Suspense } from "react";
 
 
 function PageSearch() {
 
-const params = useSearchParams()
-const query = params.get('q') as string
-
+const url = new URL(window.location.href)
+const query = url.searchParams.get('q') as string
+console.log(query)
 return (
          
        
