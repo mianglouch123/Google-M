@@ -14,11 +14,8 @@ const query = params.get('q') as string
 
 return (
          
-     <div>
        
-       {
-       !query && <p>not has query search</p>
-       }
+     
        
        <Suspense fallback={<>Loading...</>}>
         
@@ -26,7 +23,6 @@ return (
         
        </Suspense>
      
-     </div>
        
 )
 }
