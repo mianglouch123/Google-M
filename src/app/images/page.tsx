@@ -6,7 +6,7 @@ import {  useSearchParams } from "next/navigation";
 import { ApiResponseSearchImage } from '../types/images.search.type';
 import Image from 'next/image';
 
-function pageImages() {
+function PageImages() {
   
   const [results , setResults] = useState<ApiResponseSearchImage["items"]>([])
   const params = useSearchParams()
@@ -38,7 +38,7 @@ function pageImages() {
   }
 
   fetchResults(query)
-  } , [])
+  } , [query])
 
 
   console.log(results)
@@ -60,4 +60,4 @@ function pageImages() {
   )
 }
 
-export default pageImages
+export default PageImages

@@ -26,7 +26,7 @@ function SearchInput() {
     
     }
  
-  } , [path])
+  } , [query])
 
 
 

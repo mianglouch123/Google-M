@@ -1,8 +1,9 @@
-import React from 'react'
+"use client"
+
 import {useState , useEffect} from 'react'
 import { usePathname , useSearchParams } from 'next/navigation'
 
-function getPathForSearchBar() {
+function useGetPathForSearchBar() {
 
 
     const currentPath = usePathname()
@@ -35,4 +36,4 @@ function getPathForSearchBar() {
     }
 }
 
-export default getPathForSearchBar
+export default useGetPathForSearchBar

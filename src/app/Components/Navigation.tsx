@@ -1,9 +1,8 @@
 "use client"
 
-import getPathForSearchBar from "../CustomHooks/showSearchBarByPath"
+import getPathForSearchBar from "../CustomHooks/useGetPathForSearchBar"
 import SearchBarIndex from "./SearchBar"
 import SearchBarByOtherPages from "./SearchBarByOtherPages"
-import { useEffect, useState } from "react"
 function Navigation() {
 
 const {isIndexPath} = getPathForSearchBar() 
