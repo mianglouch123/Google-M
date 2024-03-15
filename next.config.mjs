@@ -1,11 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
-
-    experimental: {
-        missingSuspenseWithCSRBailout: false,
-
-    },
     images: {
         domains: ["upload.wikimedia.org", "static.wikia.nocookie.net"],
         remotePatterns: [{
