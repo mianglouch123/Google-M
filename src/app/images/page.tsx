@@ -1,9 +1,9 @@
 "use client"
 import React from 'react'
 import { useEffect , useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import {  useSearchParams } from "next/navigation";
 import { ApiResponseSearchImage } from '../types/images.search.type';
-import { v4 as uuidv4 } from 'uuid';
 import Image from 'next/image';
 
 function pageImages() {
@@ -46,7 +46,7 @@ function pageImages() {
     <div className="h-100vh w-100vw grid grid-cols-5 justify-center items-start flex-col p-4">
       
      {results?.map((content) => (
-        <div className='flex gap-5 items-center justify-center' key={uuidv4()}>
+        <div  key={uuidv4()} className='flex gap-5 items-center justify-center'>
           <Image
           src={content.originalImageUrl}
           alt={`image by ${query} search`}
