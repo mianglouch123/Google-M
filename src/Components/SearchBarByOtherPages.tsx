@@ -5,7 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import SearchInput from './SearchInput';
 
-
 function SearchBarByOtherPages() {
 
   const router = useRouter();

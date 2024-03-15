@@ -1,6 +1,6 @@
 "use client"
 
-import { ApiResponse } from '../app/types/results.type'
+import { ApiResponse } from '@/types/results.type';
 import {useEffect, useState} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
