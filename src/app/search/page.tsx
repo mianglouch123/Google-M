@@ -13,12 +13,21 @@ const params = useSearchParams()
 const query = params.get('q') as string
 
 return (
-        
+         
+     <div>
+       
+       {
+       !query && <p>not has query search</p>
+       }
+       
        <Suspense fallback={<>Loading...</>}>
         
         <Results query={query}/>
         
        </Suspense>
+     
+     </div>
+       
 )
 }
 
