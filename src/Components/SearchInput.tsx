@@ -3,7 +3,7 @@ import React from 'react'
 
 import { useState , useEffect } from 'react'
 import { useRouter } from 'next/navigation';
-import { usePathname , useSearchParams} from 'next/navigation';
+import { usePathname} from 'next/navigation';
 
 
 
@@ -11,9 +11,9 @@ function SearchInput() {
   const [search , setSearch] = useState<string>('');
   const router = useRouter()
   const path = usePathname();
-  const params = useSearchParams()
+  const params = new URL(window.location.href)
   const ROUTES : string [] = ['/search' , '/images']
-  const query = params.get('q') as string
+  const query = params.searchParams.get('q') as string
 
   useEffect(() => {
    

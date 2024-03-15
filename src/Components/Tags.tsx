@@ -1,14 +1,13 @@
 "use client"
 
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
 
 
 export default function Tags() {
  
 
-    const params = useSearchParams();
-    const query  = params.get("q") as string
+    const params = new URL(window.location.href);
+    const query  = params.searchParams.get("q") as string
 
      interface TagObject {
         tag : string ,
