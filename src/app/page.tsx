@@ -1,7 +1,12 @@
+import SearchBarIndex from "@/Components/SearchBarIndex"; 
  function Home() {
   return (
-    <main className="">
-    </main>
+
+
+    <div className="flex justify-center	items-center h-100vh w-100vw flex-col">
+
+      <SearchBarIndex />
+    </div>
   );
 }
 

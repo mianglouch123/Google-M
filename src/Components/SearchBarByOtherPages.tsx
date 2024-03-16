@@ -1,3 +1,6 @@
+"use client"
+
+
 import React from 'react'
 import { useRouter , usePathname} from 'next/navigation'
 import Image from 'next/image';
@@ -6,10 +9,9 @@ import SearchInput from './SearchInput';
 function SearchBarByOtherPages() {
 
   const router = useRouter();
-  const path = usePathname()  as string
-  const term = path.split('/').filter(term => term !== "")[1] as string
-
   
+
+
 
  return (
     <div className='flex h-[100px] w-[100%] bg-white justify-around	 items-center'>

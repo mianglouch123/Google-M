@@ -39,33 +39,27 @@ function SearchInput() {
 
 
   
-  function handleToSearch (e : React.KeyboardEvent<HTMLInputElement>) {
-    if(e.key === 'Enter') {
-     const querySearch = search
-     if(querySearch !== "") {
-      router.replace(`/search/${search}`)
-     }else {
-      return
-     }
-     
-    }
+ 
 
+  function handlePushRoute(e : React.FormEvent) {
+   e.preventDefault()
+    
+   const querySearch = search
+   if(querySearch !== "") {
+    router.replace(`/search/${search}`)
+   }else {
+    return
+   }
 
-
-
-
-  
 
   }
-
   return(
-    <div className='flex mb-[35px] relative h-[40px] w-[550px] rounded-[25px] border border-slate-100 shadow-sm'>
+    <form onSubmit={handlePushRoute} className='flex mb-[35px] relative h-[40px] w-[550px] rounded-[25px] border border-slate-100 shadow-sm'>
     <input className="bg-trasparent text-[15px] font-normal outline-none ml-8" type="text" placeholder='search someone ....' 
     value={search}
     onChange={handleSearchinput}
-    onKeyUp={handleToSearch}
     />
-   </div>
+   </form>
   )
 }
 
