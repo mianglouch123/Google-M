@@ -1,16 +1,19 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+interface TagObject {
+    tag : string ,
+    path : string
+ }
 
 
-export default function Tags() {
+
+ function Tags() {
+   const path = usePathname()  as string
+  const term = path.split('/').filter(term => term !== "")[1] as string
     
-    let query : string
-
-     interface TagObject {
-        tag : string ,
-        path : string
-     }
 
      const tags : Array<TagObject> = [
         {
@@ -20,25 +23,18 @@ export default function Tags() {
         } 
        ]
 
-
-    if(typeof window !== 'undefined') {
-         const params = new URL(window.location.href);
-         query  = params.searchParams.get("q") as string
-    
-     
-    }else {
-        return
-    }
-
  
 
 
 
     return (
         <>
-        {query && tags.map((_tag) => (
-            <Link key={_tag.path} href={`${process.env.NEXT_PUBLIC_URL as string}/${_tag.path}?q=${query}`} className="flex items-center justify-center gap-4 text-[#70758f] text-[15px]">{_tag.tag}</Link>
+        {term && tags.map((_tag) => (
+            <Link key={_tag.path} href={`${process.env.NEXT_PUBLIC_URL as string}/${_tag.path}/${term}`} className="flex items-center justify-center gap-4 text-[#70758f] text-[15px]">{_tag.tag}</Link>
         ) )}
         </>
     )
 }
+
+
+export default Tags

@@ -9,51 +9,41 @@ import { usePathname} from 'next/navigation';
 
 function SearchInput() {
   const [search , setSearch] = useState<string>('');
+
+
   const router = useRouter()
-  const path = usePathname();
-  let query
+  const path = usePathname()  as string
+  let term = path.split('/').filter(term => term !== "")[1] as string
+
+
+
+
 
   useEffect(() => {
+    if(term) {
+      term = term.replace(/%20|%/g, ' ')
 
-
-    if(typeof window !== 'undefined') {
-      const params = new URL(window.location.href)
-      const ROUTES : string [] = ['/search' , '/images']
-       query = params.searchParams.get('q') as string
-      if(ROUTES.includes(path)){
-        
-      setSearch(query)
-      console.log('linea 37 componente search input ' + path)
-  
-      
-      }
-
+      setSearch(term)
+    }else {
+      setSearch('')
     }
-    
+   
  
-  } , [query])
+  } , [term])
 
-
-
-
- 
   function handleSearchinput(e : React.ChangeEvent<HTMLInputElement>) {
     let value = e.target.value
     setSearch(value)
     
-  
-
   }
 
 
   
-  
-
   function handleToSearch (e : React.KeyboardEvent<HTMLInputElement>) {
     if(e.key === 'Enter') {
      const querySearch = search
      if(querySearch !== "") {
-      router.replace('/search?q=' + search)
+      router.replace(`/search/${search}`)
      }else {
       return
      }

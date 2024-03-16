@@ -1,27 +1,15 @@
 import React from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter , usePathname} from 'next/navigation'
 import Image from 'next/image';
 import SearchInput from './SearchInput';
 
 function SearchBarByOtherPages() {
 
   const router = useRouter();
-
-function handleRouteToImagePage() {
-
-  if(typeof window !== undefined) {
-    const params = new URL(window.location.href)
-    const searchQuery = params.searchParams.get('q') as string;
-    router.replace('/images?q=' + searchQuery )
-
-  } else {
-    return
-  }
-  
+  const path = usePathname()  as string
+  const term = path.split('/').filter(term => term !== "")[1] as string
 
   
-
-}
 
  return (
     <div className='flex h-[100px] w-[100%] bg-white justify-around	 items-center'>
@@ -33,10 +21,7 @@ function handleRouteToImagePage() {
      alt='google img banner'
      className='object-cover mr-[7px] cursor-pointer'
      onClick={() => {
-      router.replace('/')
-      setTimeout(() => {
-       window.location.reload()
-      } , 1000) 
+      router.push('/')
      }}
      ></Image>
     <div className='flex justify-center items-center mt-[33px] ml-[35px]'>

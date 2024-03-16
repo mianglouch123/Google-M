@@ -25,20 +25,20 @@ interface ResultProps {
         async function fetchResults(query : string) : Promise<void> {
 
         
-            const BASE_URL : string = `https://google-web-search1.p.rapidapi.com/?query=${query}&limit=20&related_keywords=true`
-            const options = {
-             method: 'GET',
-             headers: {
-                 'X-RapidAPI-Key': process.env.NEXT_PUBLIC_API_RAPID_KEY as string,
-                 'X-RapidAPI-Host': process.env.NEXT_PUBLIC_API_RAPID_HOST as string
-             }
-         };
+    const BASE_URL = 'https://google-search72.p.rapidapi.com/search?q=word%20cup&gl=us&lr=lang_en&num=10&start=0';
+    const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'a081713884mshdc8ef8a71ad83d2p14d50ajsnfb069f5e22e4',
+		'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
+	}
+};
          
          
          const response =  await fetch(BASE_URL , options)
          const data =  await response.json() as ApiResponse
 
-
+        console.log(data)
          setResults(data.results)
 
          if( (!Array.isArray(data?.knowledge_panel) ) && ( !Array.isArray(data?.related_keywords?.keywords) ) 
