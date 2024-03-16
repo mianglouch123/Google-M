@@ -2,7 +2,6 @@
 import Results from "@/components/Results"
 
 
-
 function SearchTermPage(
 
     {params} : {params : {searchTerm : string}}
