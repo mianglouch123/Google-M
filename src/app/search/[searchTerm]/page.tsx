@@ -1,9 +1,6 @@
 
 import Results from "@/components/Results"
-function SearchTermPage(
-
-    {params} : {params : {searchTerm : string}}
-) {
+function PageTerm( {params} : {params : {searchTerm : string}} ) {
 
 
     return (
@@ -12,4 +9,4 @@ function SearchTermPage(
 }
 
 
-export default SearchTermPage
+export default PageTerm
