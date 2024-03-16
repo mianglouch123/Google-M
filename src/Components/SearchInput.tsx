@@ -12,24 +12,7 @@ function SearchInput() {
 
 
   const router = useRouter()
-  const path = usePathname()  as string
-  let term = path.split('/').filter(term => term !== "")[1] as string
 
-
-
-
-
-  useEffect(() => {
-    if(term) {
-      term = term.replace(/%20|%/g, ' ')
-
-      setSearch(term)
-    }else {
-      setSearch('')
-    }
-   
- 
-  } , [term])
 
   function handleSearchinput(e : React.ChangeEvent<HTMLInputElement>) {
     let value = e.target.value
