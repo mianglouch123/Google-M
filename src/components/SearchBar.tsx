@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import SearchInput from './SearchInput'
-function SearchBarIndex() {
+function SearchBar() {
   return (
    
     <>
@@ -39,4 +39,4 @@ function SearchBarIndex() {
 }
 
 
-export default SearchBarIndex
+export default SearchBar
