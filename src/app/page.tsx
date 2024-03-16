@@ -1,4 +1,4 @@
-import SearchBarIndex from "@/Components/SearchBarIndex"; 
+import SearchBarIndex from "@/components/SearchBarIndex"; 
  function Home() {
   return (
 
