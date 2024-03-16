@@ -97,7 +97,7 @@ interface ResultProps {
 
      <div className='h-container w-full flex items-center ml-2 justify-center flex-col gap-4'>
            <div className='font-bold'>
-            <p className=''>relationed content</p>
+            {results && <p className=''>relationed content</p>}
            </div>
             {
             kewords?.map((content) => (
