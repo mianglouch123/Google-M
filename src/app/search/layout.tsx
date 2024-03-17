@@ -1,6 +1,6 @@
 
-import SearchBarByOtherPages from "../../components/SearchBarByOtherPages"
-import Tags from '../../components/Tags'
+import SearchBarByOtherPages from "../../componentss/SearchBarByOtherPages"
+import Tags from '../../componentss/Tags'
 function PageLayout (
   {children} : {children : React.ReactNode}
   
