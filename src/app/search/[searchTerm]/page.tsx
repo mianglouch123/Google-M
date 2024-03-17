@@ -1,5 +1,7 @@
 
-import Results from "@/components/Results"
+import Results from '../../../components/Results'
+
+
 function PageTerm( {params} : {params : {searchTerm : string}} ) {
 
 
