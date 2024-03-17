@@ -1,14 +1,15 @@
 "use client"
 
 import {useEffect, useState} from 'react'
-import { ApiResponse } from 'types/results.type';
 import { v4 as uuidv4 } from 'uuid';
+import { ApiResponse } from 'types/results.type';
 import Link from 'next/link';
 
 
 interface ResultProps {
     query : string
 }
+
 
 
 
